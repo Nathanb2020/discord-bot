@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import asyncio
+import os
 
 intents = discord.Intents.default()
 intents.voice_states = True
@@ -49,4 +50,5 @@ async def on_voice_state_update(member, before, after):
             print("Error while processing voice join:", e)
 
 # ---- Put your bot token here ----
-bot.run("")
+bot.run(os.getenv("DISCORD_TOKEN"))
+
