@@ -6,14 +6,14 @@ import os
 intents = discord.Intents.default()
 intents.voice_states = True
 intents.guilds = True
-intents.members = True  # Needed to get member info
+intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # ---------- CONFIGURATION ----------
-AUDIO_FILE = "join_Sound.mp3"  # Make sure this file is in the same folder
+AUDIO_FILE = "join_Sound.mp3"  # Make sure this file is in the same folder and name is correct
 PLAY_AUDIO = False               # <-- Set to False to disable audio
-TEXT_CHANNEL_ID = 1439333025862127699  # Replace with your text channel ID
+TEXT_CHANNEL_ID = 1439333025862127699
 # -----------------------------------
 
 @bot.event
@@ -51,4 +51,5 @@ async def on_voice_state_update(member, before, after):
 
 # ---- Put your bot token here ----
 bot.run(os.getenv("DISCORD_TOKEN"))
+
 
